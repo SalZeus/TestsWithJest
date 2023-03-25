@@ -24,13 +24,12 @@ const fromEuroToDollar = function(valueInEuro){
 }
 const fromDollarToYen = function(valueInDollar){
     // convertimos el valor a dolares
-    let valueInYen = (valueInDollar / 1.2) * 127.9;
+    let valueInYen = valueInDollar / 1.2 * 127.9;
     // retornamos el valor
-    return valueInYen;
+    return parseFloat(valueInYen.toFixed(1));
 }
 const fromYenToPound = function(valueInYen){
     let valueInPound = (valueInYen /127.9) * 0.8;
-    return valueInPound
+    return parseFloat(valueInPound.toFixed(1));
 }
-// tenemos que incluir la funcion en el exports para que sea exportada a otros archivos como test.js
 module.exports = { sum, fromEuroToDollar, fromDollarToYen, fromYenToPound }
